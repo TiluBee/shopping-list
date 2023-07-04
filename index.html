@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+font-family: 'Open Sans',sans-serif;
+background-color:black;
+}
+.call{
+    height: 605px;
+    width: 355px;
+    border: 1px solid;
+    margin: auto;
+    margin-top: 100px;
+    background-color: rgb(234, 237, 239);
+    padding-left: 20px;
+    border-radius: 30px;
+}
+#solv{
+    height: 30px;
+    width: 335px;
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: right;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+#fol{
+    height: 30px;
+    width: 330px;
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    text-align: right;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.button{
+    width: 80px;
+    height: 80px;
+    border: 1px solid black;
+    border-radius: 100%;
+    margin-top: 10px;
+    background-color: none;
+    border: none;
+    font-size: 20px;
+    font-weight: 600;
+
+}
+#eq{
+    margin-left: 80px;
+}
+#zero{
+    margin-left: 90px;
+}
+    </style>
+    
+</head>
+<body>
+    <!--  -->
+        <div class="call">
+            <div id="solv"></div>
+            <div id="fol" class="display" name="display"></div>
+            <button class="button"onclick="clearDisplay()">C</button>
+            <button id="rul" onclick="clearone()" class="button" >CE</button>
+            <button class=" button" onclick="operator('%')">%</button>
+            <button class="button" onclick="operator('/')" style="background-color: purple;">/</button>
+            <button class="button" onclick="displaytext(9)" id="nine">9</button>
+            <button id="rul" onclick="displaytext(8)" class="button" >8</button>
+            <button class=" button" onclick="displaytext(7)">7</button>
+            <button class="button" onclick="operator('*')" style="background-color:yellow;">*</button>
+            <button class="button" onclick="displaytext(6)">6</button>
+            <button class="button" onclick="displaytext(5)">5</button>
+            <button class="button" onclick="displaytext(4)">4</button>
+            <button class="button" onclick="operator('-')" style="background-color:red;">-</button>
+            <button class="button" onclick="displaytext(3)">3</button>
+            <button class="button" onclick="displaytext(2)">2</button>
+            <button class="button" onclick="displaytext(1)">1</button>
+            <button class="button" onclick="operator('+')" id="addy" style="background-color: green;">+</button>
+            <button class="button" onclick="displaytext(0)" id="zero">0</button>
+        </button><button class="button" id="eq" onclick="showResult(symbol)">=</button>
+            
+        </div>
+
+
+    
+</body>
+</html>
+
+<script>
+    let firstVal =""
+    let secondVal =""
+    let fol = document.getElementById("fol")
+    let rul = document.getElementById("rul")
+    let solv = document.getElementById("solv")
+    let nine = document.getElementById("nine")
+    let addy = document.getElementById("addy")
+    function displaytext(a){
+            fol.innerHTML += a
+            firstVal += a
+    }
+    function operator(num2){
+        fol.innerHTML += num2
+        secondVal = firstVal
+        firstVal = ""
+        symbol = num2
+    }
+    function clearDisplay(){
+        fol.innerHTML = ""
+        solv.innerHTML = ""
+        firstVal = ""
+        secondVal = ""
+    }
+    function clearone(){
+        fol.innerHTML = fol.innerHTML.slice(0, -1)
+        firstVal = fol.innerHTML
+    }
+    function showResult(symbol){
+        if(symbol === '+'){
+            result = Number(secondVal) + Number(firstVal)
+            solv.innerHTML = result
+            firstVal = result
+        }
+        else if(symbol === '-'){
+            result = Number(secondVal) - Number(firstVal)
+            solv.innerHTML = result
+            firstVal = result
+        }
+        else if(symbol === '*'){
+            result = Number(secondVal) * Number(firstVal)
+            solv.innerHTML = result
+            firstVal = result
+        }
+        else if(symbol === '/'){
+            result = Number(secondVal) / Number(firstVal)
+            solv.innerHTML = result
+            firstVal = result
+        }
+        else if(symbol === '%'){
+            result = Number(secondVal) / 100
+            solv.innerHTML =result
+            firstVal = result
+        }
+    }
+
+
+    //  
+
+
+//    }
+    // let rill = document.getElementById("rill")
+    // let input1 = document.getElementById("in")
+    // rill.style.height = "400px"
+    // rill.style.width = "400px"
+    // rill.style.borderRadius = "5px"
+    // rill.style.border = "1px solid red"
+    // function changeColor(){
+    //     rill.style.backgroundColor = input1.value
+    //     // rill.innerHTML =  input1.value
+    // }
+
+
+
+
+
+
+
+
+    // function man(a,b,c){
+    //     let sumNum = a+b-c
+    //     return sumNum
+    // }
+    // let ran = document.getElementById("ran")
+    // ran.innerHTML = man(12,3,1)
+//     function addNum1 (a,b){
+//         let sum = a+b
+//         return sum
+//     }
+
+//     let num =addNum1(7,11)
+//     console.log(num)
+
+//     let ran1=document.querySelector('.ran1');
+
+//  function displayText(name){
+//     ran1.innerHTML = 'Welcome ${name}'
+//  }
+//    let input1=document.getElementById("input1")
+//    let div1 = document.getElementById("div1")
+//    function displaycolor(){
+//     let color = input1.value;
+//     div1.style.background = color;
+//     div1.style.width = "300px";
+//     div1.style.height = "300px";
+//     div1.style.borderRadius = "20px";
+//     div1.style.display = "flex";
+//     div1.style.alignItems = "center";
+//     div1.style.justifyContent = "center";
+//     div1.innerHTML = 'The color of this div is ';
+//    }
+
+</script>

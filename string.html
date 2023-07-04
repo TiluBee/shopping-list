@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="min"></p>
+    
+</body>
+
+<script>
+    let str1 = "I like Amala";
+    console.log(str1.length);
+
+    let str2 = str1.slice(7, 12);
+    console.log(str2);
+
+    let str3 = str1.substring(2, 6)
+    console.log(str3)
+
+    let str4 = str1.split(" ")
+    console.log(str4)
+
+    let str5 = "i love eba and egusi."
+    let str6 = "i think beans and rice is also Goated"
+    console.log(str5.concat(str6))
+
+    let str7 = str5.replace("love", "hate")
+    console.log(str7)
+
+    let min = document.getElementById("min")
+    min.innerHTML = str7.toUpperCase()
+
+    let str8 = " moon is far from earth "
+    console.log(str8.trim())
+
+    console.log(str8.trimStart())
+    console.log(str8.trimEnd())
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .yu{
+            padding: 15px 30px;
+            background-color: green;
+            border: 1px solid;
+            border: none;
+            border-radius: 15px;
+
+        }
+        input{
+            width: 300px;
+        }
+        #printVal{
+            font-family: sans-serif;
+            font-size: 25px;
+            font-weight: 700;
+            color: rebeccapurple;
+        }
+
+    </style>
+</head>
+<body>
+    <input type="number" id="first">
+    <input type="number" id="second">
+    <button class="yu" onclick="multiplication()">Multiply</button>
+    <div id="printVal">
+
+    </div>
+    
+</body>
+</html>
+<script>
+    let first = document.getElementById('first')
+    let second = document.getElementById('second')
+    let printVal = document.getElementById('printVal')
+
+    function multiplication(){
+        console.log(first.value * second.value);
+        let fol = second.value
+        for (let i = 0; i <= fol; i++) {
+            console.log(fol);
+            printVal.innerHTML += `<p>${first.value} * ${[i]} = ${first.value * [i]}</p><br/> `
+            
+        }
+    }
+
+    
+</script>
